@@ -1,0 +1,90 @@
+repeat wait() until game:IsLoaded()
+local Venyx = loadstring(game:HttpGet("https://raw.githubusercontent.com/Stefanuk12/Venyx-UI-Library/main/source2.lua"))()
+local UI = Venyx.new({
+  title = "jogo de animal - By leandro??#7869| "
+})
+
+local Themes = {
+  Background = Color3.fromRGB(24, 24, 24),
+  Glow = Color3.fromRGB(0, 0, 0),
+  Accent = Color3.fromRGB(10, 10, 10),
+  LightContrast = Color3.fromRGB(20, 20, 20),
+  DarkContrast = Color3.fromRGB(14, 14, 14),  
+  TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+local Main = UI:addPage({
+  title = "scripts.",
+  icon = 887262219
+})
+
+local Gameplaydiv = Main:addSection({
+  title = "sexo"
+})
+
+local function findPlr(name)
+for _,v in pairs(game:GetService("Players"):GetPlayers()) do
+    if string.find(v.Name, name) then
+        return v
+    end
+end
+return nil
+end
+
+Gameplaydiv:addTextbox({
+  title = "invadir pack😈😈",
+  default = "Case Sensitive",
+  callback = function(text, focusLost)
+      if (focusLost) then
+        for i,v in pairs(game.Workspace.Teams:GetChildren()) do
+        if string.find(text, v.Name) then
+       game:GetService("ReplicatedStorage").acceptedEvent:FireServer(v.Name)
+      end
+  end
+end
+end
+})
+
+
+
+Gameplaydiv:addTextbox({
+  title = "comer pessoas de pinguin😳😳",
+  default = "Case Sensitive",
+  callback = function(text, focusLost)
+      if (focusLost) then
+        for i,v in pairs(game.Players:GetChildren()) do
+        if string.find(v.Name, text) then
+       game:GetService("ReplicatedStorage").RideEvents.acceptEvent:FireServer(v.Name)
+      end
+  end
+end
+end
+})
+
+local Main = UI:addPage({
+  title = "etapas",
+  icon = 887262219
+})
+
+local Gameplaydiv = Main:addSection({
+  title = "macaco"
+})
+
+
+Gameplaydiv:addButton({
+  title = "para usar o script pegue o pinguin",
+  callback = function()
+    for i,v in pairs(game.Workspace.Teams:GetChildren()) do
+        print(v.Name)
+    end
+  end
+})
+
+Gameplaydiv:addButton({
+    title = "e use a dança homem correndo",
+     callback = function()
+    for i,v in pairs(game.Workspace.Teams:GetChildren()) do
+        print(v.Name)
+    end
+  end
+})
